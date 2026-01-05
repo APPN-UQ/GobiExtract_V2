@@ -1,0 +1,46 @@
+# Project & inputs
+project_name: "2025_Sijesh_Sugarcane"
+
+# You can list 1..N cubes here. Each will render to <out_root>/<project>/<date>/...
+hyperspec_paths:
+  #- "R:/APPF_Data-Q6940/projects_external/2025_Sijesh_Sugarcane/MQN24-32/Gobi/2025-05-20/20250520_000821_2432.gpro/products/Output/Mosaic_2432_20052025.hdr"
+  #- "R:/APPF_Data-Q6940/projects_external/2025_Sijesh_Sugarcane/MQN24-32/Gobi/2025-07-16/flight1/2025-07-16-2432-SijeshSugarcane2-corrected.gpro/products/Output/Mosaic_2432_16072025_flight1"
+  #- "R:/APPF_Data-Q6940/projects_external/2025_Sijesh_Sugarcane/MQN24-32/Gobi/2025-08-18/run02/T1_Proc/20250818_000438_2432_FLIGHT1.gpro/products/Output/Mosaic_2432_18082025_run02"
+  - "R:/APPF_Data-Q6940/projects_external/2025_Sijesh_Sugarcane/MQN24-32/Gobi/2025-08-19/run00/T2_Proc/20250818_233001_2432_FLIGHT6.gpro/products/Output/Mosaic_2432_19082025_run00.dat"
+  #- "R:/APPF_Data-Q6940/projects_external/2025_Sijesh_Sugarcane/MQN24-32/Gobi/2025-09-23/run00/T1_Proc/20250922_230959_2432_Flight1.gpro/products/Output/Final_Mosaic_2432_23092025"
+
+# One shapefile for all cubes
+shp_path: "R:/APPF_Data-Q6940/projects_external/2025_Sijesh_Sugarcane/MQN24-32/ExperimentInfo/plotFile.shp"
+
+# Plot ID fields (id_field2 is optional; omit or set to null to disable)
+id_field: "Plot_ID"
+id_field2: "fid"   # or null
+
+# Output root (contains <project>/<date>/data and /plots)
+out_root: "C:/Gobi_Processing"
+
+# Buffer settings
+copy_to_buffer: true
+delete_buffer_when_done: true
+buffer_dirname: "_buffer"
+buffer_copy_policy: "exists"
+
+# Runtime
+debug: false
+debug_max_plots: 10
+
+# Preview / processing
+plot_scale: 4
+nearest_wl_tolerance_nm: 8.0
+
+# False-color targets (nm)
+fc_targets_nm:
+  nir: 840
+  red: 660
+  green: 560
+
+# Otsu fallback if per-plot thresholding fails
+osavi_otsu_fallback: 0.2
+
+# PNG output DPI
+png_dpi: 200

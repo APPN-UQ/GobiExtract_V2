@@ -1,0 +1,33 @@
+name: GobiExtract
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Core Python
+  - python=3.10
+
+  # Data handling
+  - pandas
+  - numpy
+  - pyyaml
+
+  # Geospatial
+  - geopandas
+  - rasterio
+  - shapely
+  - fiona
+  - pyproj
+
+  # Image processing
+  - scikit-image
+  - imageio
+  - matplotlib
+
+  # Utilities
+  - tqdm
+  - pip
+
+  # For Jupyter 
+  - ipykernel
+
+
