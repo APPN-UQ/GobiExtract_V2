@@ -721,7 +721,8 @@ def process_cube(cfg: Config, shp: gpd.GeoDataFrame, cube_path: Path, pbar_lvl2_
                     tqdm.write(f"[WARN] {idx_name} failed ({e}); fill NaN.")
                     vals = np.full(len(out_df), np.nan, dtype="float32")
 
-                vals = np.asarray(vals, dtype="float32")
+                # np.array (copy): pandas >= 3 hands back read-only views
+                vals = np.array(vals, dtype="float32")
                 vals[~np.isfinite(vals)] = np.nan
                 out_df[idx_name] = vals
 
